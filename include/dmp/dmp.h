@@ -48,6 +48,9 @@
 #include "dmp/radial_approx.h"
 #include "dmp/fourier_approx.h"
 #include <math.h>
+#include <Eigen/Core>
+#include <Eigen/Dense>
+
 
 namespace dmp{
 

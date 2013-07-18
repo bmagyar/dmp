@@ -41,6 +41,7 @@
 
 #include "dmp/dmp.h"
 using namespace std;
+using namespace Eigen;
 
 namespace dmp{
 
@@ -59,6 +60,42 @@ double calcPhase(double curr_time, double tau)
 	return exp(-(alpha/tau)*curr_time);
 }
 
+
+/**
+ * @brief Compute the coupling term for obstacle avoidance in 3D space
+ * @param[in] positions in 3D space
+ * @param[in] velocities
+ * @param[in] obstacle
+ * @param[out] coupling_term The coupling term 
+ */
+void computeCouplingTerm(const Vector3d positions, 
+						const Vector3d velocities, 
+                        const Vector3d obstacle,
+						Vector3d coupling_term)
+{
+    Vector3d axis = (positions - obstacle);
+    Vector4d r(axis(0), axis(1), axis(2), 1) ;
+
+    double c = cos(PI/2);
+    double s = sin(PI/2);
+    double t = 1 - c;
+    double x = r(0);
+    double y = r(1);
+    double z = r(2);
+
+    int gamma = 1000;
+    int beta = 20;
+
+    MatrixXd R = MatrixXd(4, 4);
+    R <<    t*x*x+c, t*x*y-s*z, t*x*z+s*y, 0,
+            t*x*y+s*z, t*y*y+c, t*y*z-s*x, 0,
+            t*x*z-s*y, t*y*z+s*y, t*z*z+c, 0,
+            0, 0, 0, 1;
+
+    /// \TODO normalize r
+    /// \TODO - compute phi
+
+}
 
 /**
  * @brief Given a single demo trajectory, produces a multi-dim DMP
