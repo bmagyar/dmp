@@ -12,6 +12,7 @@
   <author email="user@mail.com">Scott Niekum</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>message_generation</buildtool_depend>
 
   <build_depend>std_msgs</build_depend>
   <build_depend>rospy</build_depend>
