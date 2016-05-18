@@ -5,18 +5,11 @@ find_package(catkin REQUIRED
     COMPONENTS message_generation std_msgs roscpp cmake_modules
 )
 
-# set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-# set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-include_directories(${catkin_INCLUDE_DIRS})
-link_directories(${catkin_LIBRARY_DIRS})
-
-# add message definitions
 add_message_files(
   DIRECTORY msg 
   FILES DMPData.msg DMPPoint.msg DMPTraj.msg
 )
 
-# add service definitions
 add_service_files(
   DIRECTORY srv 
   FILES GetDMPPlan.srv LearnDMPFromDemo.srv SetActiveDMP.srv
