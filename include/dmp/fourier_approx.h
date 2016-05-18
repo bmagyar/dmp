@@ -41,7 +41,7 @@
 #ifndef FOURIER_APPROX_H_
 #define FOURIER_APPROX_H_
 
-#include "dmp/function_approx.h"
+#include <dmp/function_approx.h>
 #include <iostream>
 #include <Eigen/Core>
 #include <Eigen/SVD>

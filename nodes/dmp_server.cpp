@@ -1,4 +1,8 @@
-#include "dmp/dmp.h"
+#include <ros/ros.h>
+#include <dmp/dmp.h>
+#include <dmp/LearnDMPFromDemo.h>
+#include <dmp/GetDMPPlan.h>
+#include <dmp/SetActiveDMP.h>
 using namespace dmp;
 
 std::vector<DMPData> active_dmp_list;

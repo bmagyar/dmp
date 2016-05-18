@@ -41,12 +41,10 @@
 #ifndef DMP_H_
 #define DMP_H_
 
-#include "ros/ros.h"
-#include "dmp/LearnDMPFromDemo.h"
-#include "dmp/GetDMPPlan.h"
-#include "dmp/SetActiveDMP.h"
-#include "dmp/radial_approx.h"
-#include "dmp/fourier_approx.h"
+#include <dmp/DMPTraj.h>
+#include <dmp/DMPData.h>
+#include <dmp/radial_approx.h>
+#include <dmp/fourier_approx.h>
 #include <math.h>
 #include <Eigen/Core>
 #include <Eigen/Dense>

@@ -41,7 +41,7 @@
 #ifndef RADIAL_APPROX_H_
 #define RADIAL_APPROX_H_
 
-#include "dmp/function_approx.h"
+#include <dmp/function_approx.h>
 #include <iostream>
 #include <Eigen/Core>
 #include <Eigen/SVD>

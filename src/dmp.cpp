@@ -39,7 +39,8 @@
   */
 
 
-#include "dmp/dmp.h"
+#include <dmp/dmp.h>
+#include <ros/ros.h>
 using namespace std;
 using namespace Eigen;
 

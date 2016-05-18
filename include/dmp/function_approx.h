@@ -41,8 +41,7 @@
 #ifndef FUNCTION_APPROX_H_
 #define FUNCTION_APPROX_H_
 
-#include "ros/ros.h"
-
+#include <vector>
 
 namespace dmp{
 

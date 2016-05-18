@@ -39,8 +39,8 @@
   */
 
 
-#include "dmp/radial_approx.h"
-#include<stdio.h>
+#include <dmp/radial_approx.h>
+#include <stdio.h>
 using namespace Eigen;
 using namespace std;
 

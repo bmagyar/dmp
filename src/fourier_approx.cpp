@@ -39,8 +39,8 @@
   */
 
 
-#include "dmp/fourier_approx.h"
-#include<stdio.h>
+#include <dmp/fourier_approx.h>
+#include <stdio.h>
 using namespace Eigen;
 using namespace std;
 
