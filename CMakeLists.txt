@@ -24,6 +24,8 @@ include_directories(${EIGEN_INCLUDE_DIRS})
 add_definitions(${EIGEN_DEFINITIONS})
 
 add_library(dmp src/dmp.cpp src/fourier_approx.cpp src/radial_approx.cpp)
+add_dependencies(dmp ${PROJECT_NAME}_generate_messages_cpp)
+
 add_executable(dmp_server nodes/dmp_server.cpp)
 target_link_libraries(dmp_server dmp ${catkin_LIBRARIES})
 
