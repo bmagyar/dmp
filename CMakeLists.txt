@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(dmp)
 
 find_package(catkin REQUIRED 
-    COMPONENTS message_generation std_msgs roscpp eigen
+    COMPONENTS message_generation std_msgs roscpp cmake_modules
 )
 
 # set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
@@ -24,8 +24,7 @@ add_service_files(
 
 generate_messages(DEPENDENCIES std_msgs )
 
-# find_package(Boost REQUIRED COMPONENTS thread)
-include_directories(include ${Boost_INCLUDE_DIRS})
+include_directories(include ${Boost_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 
 find_package(Eigen REQUIRED)
 include_directories(${EIGEN_INCLUDE_DIRS})

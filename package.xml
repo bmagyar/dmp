@@ -12,11 +12,12 @@
   <author email="user@mail.com">Scott Niekum</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <buildtool_depend>message_generation</buildtool_depend>
 
   <build_depend>std_msgs</build_depend>
   <build_depend>roscpp</build_depend>
+  <build_depend>cmake_modules</build_depend>
   <run_depend>std_msgs</run_depend>
   <run_depend>roscpp</run_depend>
+  <run_depend>cmake_modules</run_depend>
 
 </package>
