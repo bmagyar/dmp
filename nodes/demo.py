@@ -5,6 +5,9 @@ from dmp.srv import *
 from dmp.msg import *
 
 #Learn a DMP from demonstration data
+from dmp.srv._GetDMPPlan import GetDMPPlanResponse
+
+
 def makeLFDRequest(dims, traj, dt, K_gain,
                    D_gain, num_bases):
     demotraj = DMPTraj()
@@ -77,10 +80,18 @@ if __name__ == '__main__':
     goal = [8.0,7.0]         #Plan to a different goal than demo
     goal_thresh = [0.2,0.2]
     seg_length = -1          #Plan until convergence to goal
-    tau = 2 * resp.tau       #Desired plan should take twice as long as demo
+    tau = 1 * resp.tau       #Desired plan should take twice as long as demo
     dt = 1.0
     integrate_iter = 5       #dt is rather large, so this is > 1
+
     plan = makePlanRequest(x_0, x_dot_0, t_0, goal, goal_thresh,
                            seg_length, tau, dt, integrate_iter)
 
     print plan
+
+    # and now let's print this in a pretty way
+    import matplotlib.pyplot as pl
+    pl.plot([i*dt for i in range(len(traj))], [x[0] for x in traj])
+    dmp_0 = [x.positions[0] for x in plan.plan.points]
+    pl.plot([i*dt for i in range(len(dmp_0))], dmp_0)
+    pl.show()
