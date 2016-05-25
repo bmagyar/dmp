@@ -1,3 +1,4 @@
 <launch>
-	<node name="dmp" pkg="dmp" type="dmp_server" respawn="false" output="screen"/>
+  <arg name="respawn" default="false"/>
+  <node name="dmp" pkg="dmp" type="dmp_server" respawn="$(arg respawn)" output="screen"/>
 </launch>
